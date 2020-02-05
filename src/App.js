@@ -5,11 +5,14 @@ import styled from "styled-components"
 import Games from "./components/games.js"
 
 function App() {
-  const [state, setState] = useState([])
+  const [state, setState] = useState({
+    games: [],
+    date: ""
+  })
 
   return (
     <div className="App">
-     <Games setState={setState} state={state}/>
+      <Games setState={setState} state={state}/>
     </div>
   );
 }

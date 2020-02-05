@@ -9,12 +9,13 @@ const getGames = (API_KEY, API_HOST, setState) => {
     }
   })
   .then(res => {
-    const r = []
+    // get all the games for the current date.
+    const games = []
     res.data.response.forEach(result => {
       if (result.league.name === "NBA")
-        r.push(result)
+        games.push(result)
     })
-    return setState(r)
+    return setState({games: games})
   })
   .catch(err => {
     console.log(err);
