@@ -42,7 +42,7 @@ const Games = ({setState, state}) => {
   return (
     <Fragment>
       <Date>
-        <h2>2019-11-26</h2>
+        <h2>{state.date}</h2>
       </Date>
       <Container>
         <Home>

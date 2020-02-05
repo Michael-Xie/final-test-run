@@ -1,7 +1,9 @@
 const getGames = (API_KEY, API_HOST, setState) => {
   const axios = require("axios")
 
-  axios("https://api-basketball.p.rapidapi.com/games?date=2019-11-26", {
+  const date = "2020-02-13"
+
+  axios(`https://api-basketball.p.rapidapi.com/games?date=${date}`, {
     "method": "GET",
     "headers": {
       "x-rapidapi-host": API_HOST,
@@ -15,7 +17,7 @@ const getGames = (API_KEY, API_HOST, setState) => {
       if (result.league.name === "NBA")
         games.push(result)
     })
-    return setState({games: games})
+    return setState({games: games, date: date})
   })
   .catch(err => {
     console.log(err);
